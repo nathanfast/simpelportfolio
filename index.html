@@ -1,0 +1,754 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Fast Template</title>
+
+<script src="media/jq.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&amp;family=IBM+Plex+Sans:wght@300;400&amp;display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+<link rel="shortcut icon" href="media/cp-fav.jpg">
+<style>
+
+body{
+background-color: #101010;
+color: #f7f7f7;
+font-family: 'IBM Plex Sans', sans-serif;
+}
+
+p{
+font-size: 19px; 
+line-height: 26px;
+letter-spacing: -0.18px;
+font-weight: 300;
+margin: 0; padding: 0;
+}
+
+h1{
+font-size:10.9vw; 
+line-height: 130px;
+letter-spacing:-0.5vw;
+font-weight: 400;
+margin: 0; padding: 0;
+margin-left: -1%;
+}
+
+h5{
+font-family: 'IBM Plex Mono', sans-serif;
+font-size: 12px; 
+line-height: 16px;
+letter-spacing: -0.18px;
+font-weight: 300;
+margin: 0; padding: 0;
+margin-bottom: 24px; 
+opacity: 0.6;
+}	
+
+a{
+font-size: 19px; 
+line-height: 26px;
+letter-spacing: -0.18px;
+font-weight: 300;
+margin: 0; padding: 0;
+color: inherit;
+text-decoration: none;
+border-bottom: 1px solid white;
+padding-bottom: 2px;
+transition: all 0.4s;
+}
+
+a:hover{
+opacity: 0.6;
+}
+
+a.wee{
+font-family: 'IBM Plex Mono', sans-serif;
+font-size: 12px; 
+line-height: 16px;
+letter-spacing: -0.18px;
+font-weight: 300;
+margin: 0; padding: 0;
+margin-bottom: 10px;
+opacity: 0.6;
+color: inherit;
+text-decoration: none;
+border-bottom: 1px solid white;
+padding-bottom: 2px;
+transition: all 0.4s;
+}
+
+a.wee:hover{
+opacity: 1;
+}
+
+hr.pri{
+clear: both;
+border-bottom:none;
+border-top: 1px solid white;
+margin: 0; padding: 0;
+}
+
+hr.sec{
+clear: both;
+border-bottom:none;
+border-top: 1px solid white;
+opacity: 0.2;
+margin: 0; padding: 0;
+}
+
+.site{
+position: absolute;
+top:0;
+left:0;
+width: 100%;
+}
+
+.about{
+float: left;
+width: 50%;
+margin-left: 50%;
+margin-top: 96px;
+margin-bottom: 96px;
+}
+
+.contact{
+float: left;
+width: 50%;
+margin-left: 50%;
+margin-top: 96px;
+margin-bottom: 160px;
+}
+
+.project{
+float: left;
+width: 100%;
+padding: 36px 0px;
+cursor: pointer;
+}
+
+.one{
+float: left;
+width: 50%;
+}
+
+.two{
+float: left;
+width: 25%;
+}
+
+.three{
+float: left;
+width: 20%;
+}
+
+.four{
+float: left;
+width: 5%;
+text-align: right;
+}
+
+.pro-content{
+float: left;
+width: 100%;
+padding: 36px 0px;
+display: none;
+}
+
+img{
+width: 80%;
+border-radius: 6px;
+}
+
+.hero-text{
+position: absolute;
+width: 100%;
+height: 100vh;
+top:0;
+left: 0;
+text-align: center;
+}
+
+.mid-text{
+position: absolute;
+width: 100%;
+top: 50%;
+transform: translateY(-50%);
+opacity: 0;
+padding-top: 70px;
+}
+
+.money{
+position: absolute;
+width: 100%;
+bottom: 20%;
+font-size: 25px;
+}
+
+.hero-vid{
+position: fixed;
+top:0;
+left: 0;
+width:82%;
+height:100vh;
+left:50%;
+transform: translateX(-50%);
+height: 100vh;
+display: none;
+}
+
+.vid{
+position: absolute;
+width: 100%;
+top: 50%;
+transform: translateY(-50%);
+border-radius: 48px;
+opacity: 0.85;
+}
+
+.fold{
+position: absolute;
+top:100vh;
+left: 0;
+width:82%;
+left:50%;
+transform: translateX(-50%);
+}
+
+.foot-vid-container{
+clear: both;
+width: 100%;
+padding-top: 500px;
+}
+
+.foot-vid{
+position: relative;
+width: 40%;
+left: 50%;
+transform: translateX(-50%);
+border-radius: 20px;
+opacity: 0.85;
+margin-bottom: 10vh;
+}
+	
+.mob-deets{
+display: none;
+}
+
+@media all and (max-width: 800px) {	
+	
+.mob-deets{
+display: block;
+}
+
+.table .two, .table .three, .project .two, .project .three {
+display: none;
+}
+	
+.one{
+width: 75%;
+}
+
+.four{
+width: 25%;
+}
+
+.pro-content .one{
+width: 100%;
+}
+
+img{
+width: 100%;
+margin-bottom: 60px;
+}
+
+.about, .contact{
+width: 100%;
+margin-left: 0;
+}
+
+.footer .one, .footer .two{
+width: 100%;
+margin-bottom: 30px;
+}
+
+.foot-vid{
+width: 100%;
+}
+
+.hero-vid{
+width:90%;
+}
+
+.vid{
+border-radius: 20px;
+margin-top:-23%;
+}
+	
+.mid-text{
+top: 40%;
+}
+
+}
+
+</style>
+</head>
+<body>
+	<div class="site">
+
+		<section class="hero-vid">
+			<video class="vid" src="media/BAV-Hero.mp4" playsinline muted loop autoplay></video>
+		</section>
+	
+		<section class="hero-text">
+			<div class="mid-text">
+				<h1 id="write"></h1>
+			</div>
+			<p class="money">*For Money</p>
+		</section>
+
+		<section class="fold">
+		
+			<div class="about">
+				<h5>About Me</h5>
+				<p>
+					This is a Template created by me, so i can use it on Projects. If you like the Style just <a href="mailto:hello@fastnathan.com">email me</a>. I will contact you as soon as possible to talk about the details.
+</p>
+			</div>	
+			
+			<div class="table">
+					<div class="one"><h5>Client</h5></div>
+					<div class="two"><h5>Project</h5></div>
+					<div class="three"><h5>Type</h5></div>
+					<div class="four"><h5> </h5></div>
+				<hr class="pri">
+				
+				<!-- PROJECT -->
+				
+				<div class="project">
+					<div class="one"><p>One</p></div>
+					<div class="two"><p>Lorem ipsum</p></div>
+					<div class="three"><p>Brand ID & Naming</p></div>
+					<div class="four"><p>↓</p></div>
+					
+					<div class="pro-content">
+						<div class="one"><img src="media/fastnathan.png"/></div>
+						<div class="one">
+							
+							<span class="mob-deets">
+								<h5>Project</h5>
+								<p>Corporate Rebrand</p>
+								<br><br>
+								<h5>Type</h5>
+								<p>Brand ID & Naming</p>
+								<br><br>
+							</span>
+							
+							<h5>Roles</h5>
+							<p>Role 1
+							<br>Role 2
+							<br>Role 3
+							</p>
+							<br><br>
+							<h5>Summary</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ullamcorper tellus nec felis finibus, vitae cursus nunc ullamcorper. Aenean lacinia dapibus ipsum, id condimentum lectus dapibus vitae. Morbi eget nisi at nisi maximus consectetur. Suspendisse potenti. Nam aliquet efficitur ante, non semper purus molestie id. Sed vestibulum lobortis fringilla. Fusce auctor ante ut tellus blandit luctus. </p>
+							<br><br>
+							<a href="https://fastnathan.com" target="_blank">Visit Website</a>
+
+						</div>
+					</div>
+				</div>
+				<hr class="sec">
+				
+				<!-- PROJECT -->
+				
+				<div class="project">
+					<div class="one"><p>Two</p></div>
+					<div class="two"><p>Lorem ipsum</p></div>
+					<div class="three"><p>Brand ID & Naming</p></div>
+					<div class="four"><p>↓</p></div>
+					
+					<div class="pro-content">
+						<div class="one"><img src="media/fastnathan.png"/></div>
+						<div class="one">
+							
+							<span class="mob-deets">
+								<h5>Project</h5>
+								<p>Corporate Rebrand</p>
+								<br><br>
+								<h5>Type</h5>
+								<p>Brand ID & Naming</p>
+								<br><br>
+							</span>
+							
+							<h5>Roles</h5>
+							<p>Role 1
+							<br>Role 2
+							<br>Role 3
+							</p>
+							<br><br>
+							<h5>Summary</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ullamcorper tellus nec felis finibus, vitae cursus nunc ullamcorper. Aenean lacinia dapibus ipsum, id condimentum lectus dapibus vitae. Morbi eget nisi at nisi maximus consectetur. Suspendisse potenti. Nam aliquet efficitur ante, non semper purus molestie id. Sed vestibulum lobortis fringilla. Fusce auctor ante ut tellus blandit luctus. </p>
+							<br><br>
+							<a href="https://fastnathan.com" target="_blank">Visit Website</a>
+
+						</div>
+					</div>
+				</div>
+				<hr class="sec">
+				
+				
+				
+				<!-- PROJECT -->
+				
+				<div class="project">
+					<div class="one"><p>Three</p></div>
+					<div class="two"><p>Lorem ipsum</p></div>
+					<div class="three"><p>Brand ID & Naming</p></div>
+					<div class="four"><p>↓</p></div>
+					
+					<div class="pro-content">
+						<div class="one"><img src="media/fastnathan.png"/></div>
+						<div class="one">
+							
+							<span class="mob-deets">
+								<h5>Project</h5>
+								<p>Corporate Rebrand</p>
+								<br><br>
+								<h5>Type</h5>
+								<p>Brand ID & Naming</p>
+								<br><br>
+							</span>
+							
+							<h5>Roles</h5>
+							<p>Role 1
+							<br>Role 2
+							<br>Role 3
+							</p>
+							<br><br>
+							<h5>Summary</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ullamcorper tellus nec felis finibus, vitae cursus nunc ullamcorper. Aenean lacinia dapibus ipsum, id condimentum lectus dapibus vitae. Morbi eget nisi at nisi maximus consectetur. Suspendisse potenti. Nam aliquet efficitur ante, non semper purus molestie id. Sed vestibulum lobortis fringilla. Fusce auctor ante ut tellus blandit luctus. </p>
+							<br><br>
+							<a href="https://fastnathan.com" target="_blank">Visit Website</a>
+
+						</div>
+					</div>
+				</div>
+				<hr class="sec">
+				
+				
+				<!-- PROJECT -->
+				
+				<div class="project">
+					<div class="one"><p>Four</p></div>
+					<div class="two"><p>Lorem ipsum</p></div>
+					<div class="three"><p>Brand ID & Naming</p></div>
+					<div class="four"><p>↓</p></div>
+					
+					<div class="pro-content">
+						<div class="one"><img src="media/fastnathan.png"/></div>
+						<div class="one">
+							
+							<span class="mob-deets">
+								<h5>Project</h5>
+								<p>Corporate Rebrand</p>
+								<br><br>
+								<h5>Type</h5>
+								<p>Brand ID & Naming</p>
+								<br><br>
+							</span>
+							
+							<h5>Roles</h5>
+							<p>Role 1
+							<br>Role 2
+							<br>Role 3
+							</p>
+							<br><br>
+							<h5>Summary</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ullamcorper tellus nec felis finibus, vitae cursus nunc ullamcorper. Aenean lacinia dapibus ipsum, id condimentum lectus dapibus vitae. Morbi eget nisi at nisi maximus consectetur. Suspendisse potenti. Nam aliquet efficitur ante, non semper purus molestie id. Sed vestibulum lobortis fringilla. Fusce auctor ante ut tellus blandit luctus. </p>
+							<br><br>
+							<a href="https://fastnathan.com" target="_blank">Visit Website</a>
+
+						</div>
+					</div>
+				</div>
+				<hr class="sec">
+				
+				
+				<!-- PROJECT -->
+				
+				<div class="project">
+					<div class="one"><p>Five</p></div>
+					<div class="two"><p>Lorem ipsum</p></div>
+					<div class="three"><p>Brand ID & Naming</p></div>
+					<div class="four"><p>↓</p></div>
+					
+					<div class="pro-content">
+						<div class="one"><img src="media/fastnathan.png"/></div>
+						<div class="one">
+							
+							<span class="mob-deets">
+								<h5>Project</h5>
+								<p>Corporate Rebrand</p>
+								<br><br>
+								<h5>Type</h5>
+								<p>Brand ID & Naming</p>
+								<br><br>
+							</span>
+							
+							<h5>Roles</h5>
+							<p>Role 1
+							<br>Role 2
+							<br>Role 3
+							</p>
+							<br><br>
+							<h5>Summary</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ullamcorper tellus nec felis finibus, vitae cursus nunc ullamcorper. Aenean lacinia dapibus ipsum, id condimentum lectus dapibus vitae. Morbi eget nisi at nisi maximus consectetur. Suspendisse potenti. Nam aliquet efficitur ante, non semper purus molestie id. Sed vestibulum lobortis fringilla. Fusce auctor ante ut tellus blandit luctus. </p>
+							<br><br>
+							<a href="https://fastnathan.com" target="_blank">Visit Website</a>
+
+						</div>
+					</div>
+				</div>
+				<hr class="sec">
+				
+				
+				
+				<!-- PROJECT -->
+				
+				<div class="project">
+					<div class="one"><p>Six</p></div>
+					<div class="two"><p>Lorem ipsum</p></div>
+					<div class="three"><p>Brand ID & Naming</p></div>
+					<div class="four"><p>↓</p></div>
+					
+					<div class="pro-content">
+						<div class="one"><img src="media/fastnathan.png"/></div>
+						<div class="one">
+							
+							<span class="mob-deets">
+								<h5>Project</h5>
+								<p>Corporate Rebrand</p>
+								<br><br>
+								<h5>Type</h5>
+								<p>Brand ID & Naming</p>
+								<br><br>
+							</span>
+							
+							<h5>Roles</h5>
+							<p>Role 1
+							<br>Role 2
+							<br>Role 3
+							</p>
+							<br><br>
+							<h5>Summary</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ullamcorper tellus nec felis finibus, vitae cursus nunc ullamcorper. Aenean lacinia dapibus ipsum, id condimentum lectus dapibus vitae. Morbi eget nisi at nisi maximus consectetur. Suspendisse potenti. Nam aliquet efficitur ante, non semper purus molestie id. Sed vestibulum lobortis fringilla. Fusce auctor ante ut tellus blandit luctus. </p>
+							<br><br>
+							<a href="https://fastnathan.com" target="_blank">Visit Website</a>
+
+						</div>
+					</div>
+				</div>
+				<hr class="sec">
+				
+				
+				<!-- PROJECT -->
+				
+				<div class="project">
+					<div class="one"><p>Seven</p></div>
+					<div class="two"><p>Lorem ipsum</p></div>
+					<div class="three"><p>Brand ID & Naming</p></div>
+					<div class="four"><p>↓</p></div>
+					
+					<div class="pro-content">
+						<div class="one"><img src="media/fastnathan.png"/></div>
+						<div class="one">
+							
+							<span class="mob-deets">
+								<h5>Project</h5>
+								<p>Corporate Rebrand</p>
+								<br><br>
+								<h5>Type</h5>
+								<p>Brand ID & Naming</p>
+								<br><br>
+							</span>
+							
+							<h5>Roles</h5>
+							<p>Role 1
+							<br>Role 2
+							<br>Role 3
+							</p>
+							<br><br>
+							<h5>Summary</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ullamcorper tellus nec felis finibus, vitae cursus nunc ullamcorper. Aenean lacinia dapibus ipsum, id condimentum lectus dapibus vitae. Morbi eget nisi at nisi maximus consectetur. Suspendisse potenti. Nam aliquet efficitur ante, non semper purus molestie id. Sed vestibulum lobortis fringilla. Fusce auctor ante ut tellus blandit luctus. </p>
+							<br><br>
+							<a href="https://fastnathan.com" target="_blank">Visit Website</a>
+
+						</div>
+					</div>
+				</div>
+				<hr class="sec">
+				
+				
+				<!-- PROJECT -->
+				
+				<div class="project">
+					<div class="one"><p>Eight</p></div>
+					<div class="two"><p>Lorem ipsum</p></div>
+					<div class="three"><p>Brand ID & Naming</p></div>
+					<div class="four"><p>↓</p></div>
+					
+					<div class="pro-content">
+						<div class="one"><img src="media/fastnathan.png"/></div>
+						<div class="one">
+							
+							<span class="mob-deets">
+								<h5>Project</h5>
+								<p>Corporate Rebrand</p>
+								<br><br>
+								<h5>Type</h5>
+								<p>Brand ID & Naming</p>
+								<br><br>
+							</span>
+							
+							<h5>Roles</h5>
+							<p>Role 1
+							<br>Role 2
+							<br>Role 3
+							</p>
+							<br><br>
+							<h5>Summary</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ullamcorper tellus nec felis finibus, vitae cursus nunc ullamcorper. Aenean lacinia dapibus ipsum, id condimentum lectus dapibus vitae. Morbi eget nisi at nisi maximus consectetur. Suspendisse potenti. Nam aliquet efficitur ante, non semper purus molestie id. Sed vestibulum lobortis fringilla. Fusce auctor ante ut tellus blandit luctus. </p>
+							<br><br>
+							<a href="https://fastnathan.com" target="_blank">Visit Website</a>
+
+						</div>
+					</div>
+				</div>
+				<hr class="sec">
+				
+			</div>
+			
+			<div class="contact">
+				<h5>Contact</h5>
+				<a href="mailto:hello@fastnathan.com" target="_blank">hello@fastnathan.com</a>
+			</div>	
+			
+			<div class="footer">
+				<hr class="pri">
+				<br>
+				<div class="one"><h5>© Nathan Fast 2023</h5></div>
+				<div class="two">
+					<h5>Site</h5>
+					<h5>
+					<a class="wee" href="https://fastnathan.com" target="_blank">Fast</a>
+					</h5>
+				</div>
+				<div class="two">	
+					<h5>Video</h5>
+					<a class="wee" href="https://fastnathan.com" target="_blank">Fast</a>
+					<br><br>
+					<a class="wee" href="https://fastnathan.com" target="_blank">Fast</a>
+					<br><br>
+					<a class="wee" href="https://fastnathan.com" target="_blank">Fast</a>
+					<br><br>
+					<a class="wee" href="https://fastnathan.com" target="_blank">Fast</a>
+				</div>
+				
+				
+				
+				<div class="foot-vid-container"></div>
+				<video class="foot-vid" src="media/BAV-Hero.mp4" playsinline muted loop autoplay></video>
+			</div>
+		
+			
+		</section>
+
+	</div>
+</body>
+
+<script>
+
+$( ".project" ).click(function() {
+	var pc = $(this).find(".pro-content");
+	var arrow = $(this).find(".four").find("p");
+	
+	if( pc.is(":visible") ){ 
+		pc.slideUp('fast')
+		.animate(
+    		{ opacity: 0 },
+    		{ queue: false, duration: 'fast' }
+		
+		);
+		arrow.html("↓");
+		}
+	else{
+ 		pc.css('opacity', 0)
+	  	.slideDown('fast')
+  		.animate(
+    		{ opacity: 1 },
+    		{ queue: false, duration: 'slow' }
+  		);
+		arrow.html("↑");
+		};
+});
+
+</script>
+
+<script>
+
+$( document ).ready(function() {
+    typeWriter();
+	$(".hero-vid").fadeIn(1000);
+	$(".mid-text").animate(
+    		{ 
+			opacity: 1, 
+			paddingTop: "0px" 
+			},
+			{ queue: false, duration: 'fast' }
+  		);
+});
+
+var i = 0;
+var txt = 'Get this Template.*';
+var speed = 120;
+
+function typeWriter() {
+	$(".money").hide();
+  if (i < txt.length) {
+    document.getElementById("write").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }else{
+	  $(".money").show();
+  setTimeout(function(){
+  	document.getElementById("write").innerHTML = " ";
+	i = 0;
+  	typeWriter();
+  }, 800);
+  }
+}
+
+$(window).scroll( function(){
+
+	if($(window).scrollTop() > 400){
+		$(".hero-vid").fadeOut(800);
+	}else{
+		$(".hero-vid").fadeIn(800);
+	};
+	if($(window).scrollTop() > 200){
+		$(".hero-text").fadeOut(800);
+	}else{
+		$(".hero-text").fadeIn();
+	};
+});
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+</script>
+
+
+</html>
